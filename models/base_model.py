@@ -5,6 +5,8 @@ import uuid
 from datetime import datetime
 import cmd
 import sys
+from models import storage
+
 """Import"""
 
 
@@ -25,7 +27,8 @@ class BaseModel:
     def save(self):
         """update the public instance attribute"""
         self.save = save
-        return self.updated_at = datetime.now()
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary"""
