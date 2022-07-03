@@ -5,10 +5,11 @@ import uuid
 from datetime import datetime
 import cmd
 import sys
+"""Import"""
+
 
 class BaseModel:
     """Create"""
-
     def __init__(self, id):
         """self"""
         self.id = id
@@ -16,7 +17,7 @@ class BaseModel:
         id = uuid.uuid4()
         created_at = datetime.now()
         updated_at = datetime.now()
-       
+
     @classmethod
     def __str__(self):
         """str"""
@@ -31,6 +32,4 @@ class BaseModel:
         """returns a dictionary"""
         created_at = datetime.now().isoformat()
         updated_at = datetime.now().isoformat()
-        datetime.datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
-
-
+        datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
