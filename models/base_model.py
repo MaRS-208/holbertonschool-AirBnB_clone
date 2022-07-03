@@ -12,11 +12,10 @@ class BaseModel:
     """Create"""
     def __init__(self, id):
         """self"""
-        self.id = id
-
-        id = uuid.uuid4()
+        self.id = str(uid.uuid4())
         created_at = datetime.now()
         updated_at = datetime.now()
+        datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
 
     @classmethod
     def __str__(self):
@@ -25,11 +24,10 @@ class BaseModel:
 
     def save(self):
         """update the public instance attribute"""
-    self.save = self
-    self.updated_at = datetime.now()
+        self.save = save
+        return self.updated_at = datetime.now()
 
     def to_dict(self):
         """returns a dictionary"""
-        created_at = datetime.now().isoformat()
-        updated_at = datetime.now().isoformat()
-        datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
+        self.created_at = created_at.isoformat()
+        self.updated_at = updated_at.isoformat()
