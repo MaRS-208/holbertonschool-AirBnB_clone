@@ -20,3 +20,6 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, arg):
         """EOF error"""
         return True
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
