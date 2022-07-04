@@ -29,7 +29,7 @@ class BaseModel:
         aux = {}
         for key, item in self.__dict__.items():
             if key == self.updated_at or key == self.created_at:
-                aux[key] = item.isoformat()
+                aux[key] = datetime.isoformat()
             else:
                 aux[key] = item
         return aux
