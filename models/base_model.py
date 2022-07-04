@@ -5,14 +5,13 @@ import uuid
 from datetime import datetime
 import cmd
 import sys
-from models import storage
 
 """Import"""
 
 
 class BaseModel:
     """Create"""
-    def __init__(self, id):
+    def __init__(self,id):
         """self"""
         self.id = str(uid.uuid4())
         created_at = datetime.now()
@@ -20,6 +19,7 @@ class BaseModel:
         datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
 
     @classmethod
+
     def __str__(self):
         """str"""
         return(f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
@@ -27,7 +27,6 @@ class BaseModel:
     def save(self):
         """update the public instance attribute"""
         self.updated_at = datetime.now()
-        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary"""
