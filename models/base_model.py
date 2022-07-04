@@ -13,10 +13,10 @@ class BaseModel:
     """Create"""
     def __init__(self,id):
         """self"""
-        self.id = str(uid.uuid4())
+        id = str(uuid.uuid4())
         created_at = datetime.now()
-        updated_at = datetime.now()
-        datetime.strptime('2017-06-14T22:31:03.285259', '%Y-%m-%dT%H:%M:%S.%f')
+        updated_at = self.created_at.datetime.now()
+        datetime.strptime('%Y-%m-%dT%H:%M:%S.%f')
 
     @classmethod
 
