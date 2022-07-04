@@ -1,23 +1,19 @@
 #!/usr/bin/python3
-"""Import"""
+"""Write a class BaseModel that defines all common attributes/methods for other classes"""
 
-import uuid
 from datetime import datetime
+import uuid
 import cmd
 import sys
 
-"""Import"""
-
 
 class BaseModel:
-    """Create"""
-    def __init__(self,id):
-        """self"""
-        id = str(uuid.uuid4())
+    """defines all common attributes/methods for other classes"""
+    def __init__(self, id):
+        """initializing"""
+        self.id = str(uuid.uuid4())
         created_at = datetime.now()
         updated_at = self.created_at.datetime.now()
-
-    @classmethod
 
     def __str__(self):
         """str"""
