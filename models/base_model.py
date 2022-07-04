@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Write a class BaseModel that defines all common attributes/methods for other classes"""
+"""Write a class BaseModel that defines all \
+common attributes/methods for other classes"""
 
 from datetime import datetime
 import uuid
@@ -30,6 +31,4 @@ class BaseModel:
             if key == self.created_at or key == self.updated_at:
                 self.created_at = self.created_at.isoformat()
                 self.updated_at = self.updated_at.isoformat()
-            aux[key] = item
-
-
+                aux[key] = item
