@@ -13,8 +13,8 @@ class BaseModel:
     def __init__(self):
         """initializing"""
         self.id = str(uuid.uuid4())
-        created_at = datetime.now()
-        updated_at = created_at
+        self.created_at = datetime.now()
+        self.updated_at = self.created_at
 
     def __str__(self):
         """str"""
@@ -28,7 +28,8 @@ class BaseModel:
         """returns a dictionary"""
         aux = {}
         for key, item in self.__dict__.items():
-            if key == self.created_at or key == self.updated_at:
-                self.created_at = self.created_at.isoformat()
-                self.updated_at = self.updated_at.isoformat()
+            if key == self.updated_at or key == self.created_at:
+                aux[key] = item.isoformat()
+            else:
                 aux[key] = item
+        return aux
