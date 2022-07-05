@@ -10,6 +10,7 @@ from models.state import State
 from models.review import Review
 from models.place import Place
 
+
 class FileStorage:
     """Create"""
     def __init__(self):
@@ -38,11 +39,11 @@ class FileStorage:
             tmp = json.load(f)
             for key, value in tmp:
                 self.all()
-            aux = {"Amenity" : Amenity,
-                    "City" : City,
-                    "BaseModel" : BaseModel,
-                    "User" : User,
-                    "State" : State,
-                    "Review" : Review,
-                    "Place" : Place}
-            aux[__clas__] (**value)
+            aux = {"Amenity": Amenity,
+                    "City": City,
+                    "BaseModel": BaseModel,
+                    "User": User,
+                    "State": State,
+                    "Review": Review,
+                    "Place": Place}
+            aux[__clas__](**value)
