@@ -11,13 +11,11 @@ import sys
 
 class BaseModel:
     """Create"""
-    def __init__(self,id):
+    def __init__(self, id):
         """self"""
-        id = str(uuid.uuid4())
+        self.id = str(uuid.uuid4())
         created_at = datetime.now()
         updated_at = self.created_at.datetime.now()
-
-    @classmethod
 
     def __str__(self):
         """str"""
