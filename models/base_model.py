@@ -9,14 +9,6 @@ import uuid
 
 
 class BaseModel:
-<<<<<<< HEAD
-    """Create"""
-    def __init__(self, id):
-        """self"""
-        self.id = str(uuid.uuid4())
-        created_at = datetime.now()
-        updated_at = self.created_at.datetime.now()
-=======
     """defines all common attributes/methods for other classes"""
 
     def __init__(self, *args, **kwargs):
@@ -36,7 +28,6 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
->>>>>>> b295da3f249c9115db8ecee06cd7e73f85f79357
 
     def __str__(self):
         """str"""
