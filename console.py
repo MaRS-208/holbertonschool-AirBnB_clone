@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 """Write a program called console.py that contains\
 the entry point of the command interpreter"""
-import cmd
-import json
-from models.amenity import Amenity
-from models.city import City
+
+
 from models.base_model import BaseModel
-from models.user import User
-from models.state import State
+from models.amenity import Amenity
 from models.review import Review
+from models.state import State
 from models.place import Place
+from models.city import City
+from models.user import User
+import json
+import cmd
 
 
 class HBNBCommand(cmd.Cmd):
