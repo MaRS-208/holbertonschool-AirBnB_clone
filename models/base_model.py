@@ -1,21 +1,42 @@
 #!/usr/bin/python3
-"""Import"""
+"""Write a class BaseModel that defines all \
+common attributes/methods for other classes"""
 
-import uuid
 from datetime import datetime
-import cmd
-import sys
-
-"""Import"""
+import models
+import json
+import uuid
 
 
 class BaseModel:
+<<<<<<< HEAD
     """Create"""
     def __init__(self, id):
         """self"""
         self.id = str(uuid.uuid4())
         created_at = datetime.now()
         updated_at = self.created_at.datetime.now()
+=======
+    """defines all common attributes/methods for other classes"""
+
+    def __init__(self, *args, **kwargs):
+        """initializing"""
+        is_format = '%Y-%m-%dT%H:%M:%S.%f'
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    pass
+                elif key == "id":
+                    self.id = value
+                elif key == "created_at":
+                    self.created_at = datetime.strptime(value, is_format)
+                elif key == "updated_at":
+                    self.updated_at = datetime.strptime(value, is_format)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
+>>>>>>> b295da3f249c9115db8ecee06cd7e73f85f79357
 
     def __str__(self):
         """str"""
@@ -27,5 +48,7 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        self.created_at = created_at.isoformat()
-        self.updated_at = updated_at.isoformat()
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+        self.__dict__["__class__"] = self.__class__.__name__
+        return(self.__dict__)
