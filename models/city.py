@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""City"""
+"""Write a class City that inherits from BaseModel"""
+
+
 from models.base_model import BaseModel
+import json
 
 
 class City(BaseModel):

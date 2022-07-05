@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Import"""
+"""Write a class Place that inherits from BaseModel"""
+
+
 from models.base_model import BaseModel
+import json
 
 
 class Place(BaseModel):
-    """Class"""
+    """Place"""
     city_id: ""
     user_id: ""
     name: ""

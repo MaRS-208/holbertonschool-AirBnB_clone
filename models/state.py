@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Import"""
+"""Write a class State that inherit from BaseModel"""
+
+
 from models.base_model import BaseModel
+import json
 
 
 class State(BaseModel):
-    """Class"""
+    """State"""
     name: ""
