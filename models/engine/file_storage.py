@@ -46,4 +46,4 @@ class FileStorage:
                     "State": State,
                     "Review": Review,
                     "Place": Place}
-            aux[__clas__](**value)
+            self.all()[key] = aux[value.__class__](**value)
