@@ -14,7 +14,7 @@ import json
 
 class FileStorage:
     """serializes and deserializes an instance to JSON"""
-        __file_path = 'file.json'
+        __file_path = file.json
         __objetcs = {}
 
     def all(self):
@@ -31,7 +31,7 @@ class FileStorage:
         for key, value in new_dict.items():
             new_dict[key] = value.to_dict()
         with open(self.__file.path, w) as f:
-            json.dump(self._objects, f)
+            json.dump(self.__objects, f)
 
     def reload(self):
         """Deserialization"""
