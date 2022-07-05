@@ -1,19 +1,18 @@
 #!/usr/bin/python3
 """convert the dictionary representation to a JSON string"""
 
-import json
-from models.amenity import Amenity
-from models.city import City
 from models.base_model import BaseModel
-from models.user import User
-from models.state import State
+from models.amenity import Amenity
 from models.review import Review
+from models.state import State
 from models.place import Place
+from models.city import City
+from models.user import User
+import json
 
 
 class FileStorage:
     """serializes and deserializes an instance to JSON"""
-    def __init__(self):
         __file_path = 'file.json'
         __objetcs = {}
 
