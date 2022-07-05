@@ -24,4 +24,18 @@ class FileStorage:
         for key, value in new_dict.items():
             new_dict[key] = value.to_dict()
         with open(self.__file.path, w) as f:
-            json.dumps(self._objects)
+            json.dump(self._objects, f)
+
+    def reload(self):
+        """Deserialization"""
+        with open(self.__file_path, r) as f:
+            tmp = json.load(f)
+            for key, value in tmp:
+                self.all()
+            aux = {"Amenity" : Amenity,
+                    "City" : City,
+                    "BaseModel" : BaseModel,
+                    "User" : User,
+                    "State" : State,
+                    "Review" : Review,
+                    "Place" : Place}
