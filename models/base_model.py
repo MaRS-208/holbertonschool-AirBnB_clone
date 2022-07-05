@@ -2,6 +2,7 @@
 """Write a class BaseModel that defines all \
 common attributes/methods for other classes"""
 
+from models.engine.file_storage import FileStorage
 from datetime import datetime
 import models
 import json
@@ -36,6 +37,7 @@ class BaseModel:
     def save(self):
         """update the public instance attribute"""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """returns a dictionary"""
