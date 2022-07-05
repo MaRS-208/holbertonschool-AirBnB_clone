@@ -3,14 +3,14 @@
 
 
 from models.base_model import BaseModel
-import json
-
 
 class City(BaseModel):
+<<<<<<< HEAD
     pass
     """
+=======
+    """class"""
+    
+>>>>>>> 40f4dbea1c1fcaac6d92163fd1fd2f06c54b730d
     state_id = ""
     name = ""
-
-    def __init__(self)
-        """
