@@ -13,11 +13,11 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
-                    self.id = key.value
+                    self.id = value
                 elif key == "created_at":
-                    self.created_at = key.value
+                    self.created_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f)
                 elif key == "updated_at":
-                    self.updated_at = key.value
+                    self.updated_at = value
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
