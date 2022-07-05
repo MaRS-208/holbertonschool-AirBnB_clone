@@ -3,15 +3,20 @@
 common attributes/methods for other classes"""
 
 from datetime import datetime
+import models
+import json
 import uuid
 
 
 class BaseModel:
     """defines all common attributes/methods for other classes"""
+    
     def __init__(self, *args, **kwargs):
         """initializing"""
         if kwargs:
             for key, value in kwargs.items():
+                if key == "__class__":
+                    pass
                 if key == "id":
                     self.id = value
                 elif key == "created_at":
