@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """convert the dictionary representation to a JSON string"""
 
+
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.review import Review
@@ -18,7 +19,7 @@ class FileStorage:
 
     def all(self):
         """returns the dictionary"""
-        return (self.__objects)
+        return self.__objects
 
     def new(self, obj):
         """sets in dictionary"""
