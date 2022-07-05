@@ -12,10 +12,10 @@ from models.place import Place
 
 
 class FileStorage:
-    """Create"""
+    """serializes and deserializes an instance to JSON"""
     def __init__(self):
-        self.__file_path = file.json
-        self.__objetcs = {}
+        __file_path = 'file.json'
+        __objetcs = {}
 
     def all(self):
         """returns the dictionary"""
