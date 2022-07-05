@@ -4,8 +4,7 @@ common attributes/methods for other classes"""
 
 from datetime import datetime
 import uuid
-import cmd
-import sys
+from models import storage
 
 
 class BaseModel:
