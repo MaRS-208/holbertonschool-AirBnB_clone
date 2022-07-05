@@ -30,11 +30,11 @@ This application won't be built all at once, but step by step, every step being 
 
 The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. This means: from the console code (the command interpreter itself) and from the front-end and RestAPI that will be build later, there won't be a need to pay attentiont to (take care of) how the objects are stored.
 
-This abstraction will also allow you to change the type of storage easily without updating all of your codebase.
+This abstraction will also allow us to change the type of storage easily without updating all of your codebase.
 
 The console will be a tool to validate this storage engine.
 
-### First step: Write a command interpreter to manage your AirBnB objects.
+### The first step is to write a command interpreter to manage our AirBnB objects.
 This first step is very important because we will use what we build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
 
 Each task is linked and will help us to:
@@ -54,7 +54,7 @@ It’s exactly the same as a Shell, but limited to a specific use-case. In our c
 - Update attributes of an object
 - Destroy an object
 
-For this purpose, we it is needed to understand and integrate these concepts:
+For this purpose, it is needed to understand and integrate these concepts:
 
 - Python abstract classes
 - cmd module
