@@ -13,7 +13,7 @@ import json
 
 class FileStorage:
     """serializes and deserializes an instance to JSON"""
-        __file_path = 'file.json'
+        __file_path = file.json
         __objetcs = {}
 
     def all(self):
