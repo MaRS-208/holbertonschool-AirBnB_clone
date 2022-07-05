@@ -3,6 +3,13 @@
 the entry point of the command interpreter"""
 import cmd
 import json
+from models.amenity import Amenity
+from models.city import City
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.review import Review
+from models.place import Place
 
 
 class HBNBCommand(cmd.Cmd):
@@ -21,6 +28,18 @@ class HBNBCommand(cmd.Cmd):
         """EOF error"""
         return True
 
+    def do_create(self, arg):
+        """create"""
+        aux = {"Amenity": Amenity,
+               "City": City,
+               "BaseModel": BaseModel,
+               "User": User,
+               "State": State,
+               "Review": Review,
+               "Place": Place}
+        obj = aux[arg]()
+        obj.save()
+        print(obj)
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
