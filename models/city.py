@@ -7,7 +7,7 @@ import json
 
 
 class City(BaseModel):
-    pass 
+    pass
     """
     state_id = ""
     name = ""
