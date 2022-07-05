@@ -10,7 +10,7 @@ At the en of this project we will have a complete web application composed by:
 - A database or files that store data (data = objects)
 - An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
 
-## Steps
+### Steps
 
 This application won't be built all at once, but step by step, every step being linked to a concept:
 
@@ -23,6 +23,8 @@ This application won't be built all at once, but step by step, every step being 
 - Files and Directories
 
 ## The console
+
+This project is all about the console:
 
 - create the data model
 - manage (create, update, destroy, etc) objects via a console / command interpreter
