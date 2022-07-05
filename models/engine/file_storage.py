@@ -45,3 +45,4 @@ class FileStorage:
                     "State" : State,
                     "Review" : Review,
                     "Place" : Place}
+            aux[__clas__] (**value)
