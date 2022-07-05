@@ -31,7 +31,8 @@ class FileStorage:
         for key, value in new_dict.items():
             new_dict[key] = value.to_dict()
         with open(self.__file.path, w) as f:
-            return f.write(json.dump(self.__objects))
+            self.__objects = json.dump(f)
+            f.write
 
     def reload(self):
         """Deserialization"""
