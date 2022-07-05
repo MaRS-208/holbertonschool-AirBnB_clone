@@ -17,7 +17,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == "__class__":
                     pass
-                if key == "id":
+                elif key == "id":
                     self.id = value
                 elif key == "created_at":
                     self.created_at = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
