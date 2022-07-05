@@ -34,10 +34,7 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        aux = {}
-        for key, item in self.__dict__.items():
-            if key == self.updated_at or key == self.created_at:
-                aux[key] = item.isoformat()
-            else:
-                aux[key] = item
-        return aux
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+        self.__dict__["__class__"] = self.__class__.__name__
+        return(self.__dict__)
