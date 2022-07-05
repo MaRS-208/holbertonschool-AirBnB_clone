@@ -20,7 +20,7 @@ This application won't be built all at once, but step by step, every step being 
 - Web framewor - templating
 - RESTful API
 - Web dynamic
-_ Files and Directories
+- Files and Directories
 
 ## The console
 
