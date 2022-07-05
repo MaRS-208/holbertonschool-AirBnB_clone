@@ -4,14 +4,13 @@ common attributes/methods for other classes"""
 
 from datetime import datetime
 import uuid
-from models import storage
 
 
 class BaseModel:
     """defines all common attributes/methods for other classes"""
     def __init__(self, *args, **kwargs):
         """initializing"""
-        if kwargs is not []:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = key.value
