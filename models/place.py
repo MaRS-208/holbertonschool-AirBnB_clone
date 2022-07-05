@@ -3,7 +3,6 @@
 
 
 from models.base_model import BaseModel
-import json
 
 
 class Place(BaseModel):
