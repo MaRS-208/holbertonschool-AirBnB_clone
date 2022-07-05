@@ -21,5 +21,6 @@ class HBNBCommand(cmd.Cmd):
         """EOF error"""
         return True
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
