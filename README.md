@@ -1,5 +1,5 @@
 # 0x00. AirBnB clone - The console
- Project team members: Manu Ríos Sosa, Ricardo Danta
+Project team members: Manuela Ríos Sosa, Ricardo Danta
 
 The goal of the AirBnB clone project is to deploy on our server a simple copy of the AirBnB website, where we will be covering all fundamental concepts of the higher level programming track.
 
