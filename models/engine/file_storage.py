@@ -23,7 +23,7 @@ class FileStorage:
 
     def new(self, obj):
         """sets in dictionary"""
-        self.__objects[obj.__class__.name.obj.id] = obj
+        self.__objects[obj.__class__.name + '.' + obj.id] = obj
 
     def save(self):
         """serializes the JSON file"""
