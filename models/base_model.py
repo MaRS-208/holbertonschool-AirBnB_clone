@@ -2,9 +2,8 @@
 """Write a class BaseModel that defines all \
 common attributes/methods for other classes"""
 
-from models.engine.file_storage import FileStorage
 from datetime import datetime
-import models
+from models import storage
 import json
 import uuid
 
