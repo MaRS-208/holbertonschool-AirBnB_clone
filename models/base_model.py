@@ -16,9 +16,7 @@ class BaseModel:
         is_format = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
-                if key == "__class__":
-                    pass
-                elif key == "id":
+                if key == "id":
                     self.id = value
                 elif key == "created_at":
                     self.created_at = datetime.strptime(value, is_format)
