@@ -2,7 +2,7 @@
 """Write a class BaseModel"""
 
 from datetime import datetime
-from models.engine import storage
+import models
 import uuid
 
 
