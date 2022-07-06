@@ -12,7 +12,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initializing"""
         is_format = '%Y-%m-%dT%H:%M:%S.%f'
-        if kwargs:
+        if kwargs is not None:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
