@@ -7,7 +7,7 @@ import models
 import uuid
 
 
-class BaseModel:
+class BaseModel():
     """defines all common attributes/methods for other classes"""
 
     def __init__(self, *args, **kwargs):
@@ -21,10 +21,14 @@ class BaseModel:
                     self.created_at = datetime.strptime(value, formats)
                 elif key == "updated_at":
                     self.updated_at = datetime.strptime(value, formats)
+                elif key == "__class__":
+                    pass
+                else:
+                    setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
-            self.updated_at = self.created_at
+            self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self):
@@ -38,7 +42,8 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
-        self.__dict__["__class__"] = self.__class__.__name__
-        return (self.__dict__)
+        new_dict = self.__dict__.copy()
+        new_dict["created_at"] = self.created_at.isoformat()
+        new_dict["updated_at"] = self.updated_at.isoformat()
+        new_dict["__class__"] = self.__class__.__name__
+        return (new_dict)
