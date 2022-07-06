@@ -27,6 +27,8 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = self.created_at
 
+    @classmethod
+
     def __str__(self):
         """str"""
         return(f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
