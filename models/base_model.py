@@ -3,7 +3,7 @@
 common attributes/methods for other classes"""
 
 from datetime import datetime
-import models
+from models import storage
 import json
 import uuid
 
@@ -27,7 +27,6 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = self.created_at
 
-    @classmethod
     def __str__(self):
         """str"""
         return(f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
@@ -39,7 +38,8 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        self.created_at = self.created_at.isoformat()
-        self.updated_at = self.updated_at.isoformat()
-        self.__dict__["__class__"] = self.__class__.__name__
-        return(self.__dict__)
+        aux = self.__dict__.copy()
+        aux["created_at"] = self.created_at.isoformat()
+        aux["updated_at"] = self.updated_at.isoformat()
+        aux['__class__'] = self.__class__.__name__
+        return aux
