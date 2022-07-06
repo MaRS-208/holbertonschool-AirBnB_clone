@@ -42,12 +42,12 @@ class FileStorage:
                 for key, value in tmp.items():
                     self.all()
                     aux = {"Amenity": Amenity,
-                       "City": City,
-                       "BaseModel": BaseModel,
-                       "User": User,
-                       "State": State,
-                       "Review": Review,
-                       "Place": Place}
+                           "City": City,
+                           "BaseModel": BaseModel,
+                           "User": User,
+                           "State": State,
+                           "Review": Review,
+                           "Place": Place}
                     self.all()[key] = aux[value["__class__"]](**value)
         except Exception:
             pass
