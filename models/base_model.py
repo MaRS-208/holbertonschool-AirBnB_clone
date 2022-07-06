@@ -3,7 +3,7 @@
 common attributes/methods for other classes"""
 
 from datetime import datetime
-from models import storage
+import models
 import json
 import uuid
 
