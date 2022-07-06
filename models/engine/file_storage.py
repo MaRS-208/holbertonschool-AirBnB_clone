@@ -30,25 +30,24 @@ class FileStorage:
         new_dict = self.__objects.copy()
         for key, value in new_dict.items():
             new_dict[key] = value.to_dict()
-<<<<<<< HEAD
         with open(self.__file_path, "w") as f:
-            return f.write(json.dumps(f))
-=======
-        with open(self.__file.path, w) as f:
-            json.dumps(new_dict, f)
->>>>>>> fffd83903a3d0912f950698ec4c519641b0389c4
+            json.dump(new_dict, f)
 
     def reload(self):
         """Deserialization"""
-        with open(self.__file_path, "r") as f:
-            tmp = json.load(f)
-            for key, value in tmp.items():
-                self.all()
-                aux = {"Amenity": Amenity,
+        try:
+            tmp = {}
+            with open(self.__file_path, "r") as f:
+                tmp = json.load(f)
+                for key, value in tmp.items():
+                    self.all()
+                    aux = {"Amenity": Amenity,
                        "City": City,
                        "BaseModel": BaseModel,
                        "User": User,
                        "State": State,
                        "Review": Review,
                        "Place": Place}
-                self.all()[key] = aux[value["__class__"]](**value)
+                    self.all()[key] = aux[value["__class__"]](**value)
+        except Exception:
+            pass
