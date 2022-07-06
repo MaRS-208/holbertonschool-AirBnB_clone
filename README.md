@@ -64,4 +64,3 @@ For this purpose, it is needed to understand and integrate these concepts:
 - datetime
 - unittest module
 - args/kwargs
-
