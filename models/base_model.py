@@ -3,7 +3,7 @@
 common attributes/methods for other classes"""
 
 from datetime import datetime
-from models import storage
+import storage
 import uuid
 
 
@@ -34,7 +34,6 @@ class BaseModel:
     def save(self):
         """update the public instance attribute"""
         self.updated_at = datetime.now()
-        self.updated_at = datetime.strptime('%Y-%m-%dT%H:%M:%S.%f')
         storage.save()
 
     def to_dict(self):
