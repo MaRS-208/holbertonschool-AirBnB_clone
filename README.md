@@ -73,7 +73,3 @@ For this purpose, it is needed to understand and integrate these concepts:
 
 
 Project team members: [Manuela Ríos Sosa](https://github.com/MaRS-208), [Ricardo Danta](https://github.com/RicardoDanta)
-
->>>>>>> c923c22df4a5d80b68029f96e5bf79073d2dcdd5
-
-
