@@ -38,8 +38,7 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        aux = self.__dict__.copy()
-        aux["created_at"] = self.created_at.isoformat()
-        aux["updated_at"] = self.updated_at.isoformat()
-        aux['__class__'] = self.__class__.__name__
-        return aux
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+        self.__dict__["__class__"] = self.__class__.__name__
+        return (self.__dict__)
