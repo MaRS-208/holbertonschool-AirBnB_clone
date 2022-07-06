@@ -3,7 +3,7 @@
 
 from datetime import datetime
 from models import storage
-from uuid import uuid4
+import uuid
 
 
 class BaseModel:
@@ -37,10 +37,7 @@ class BaseModel:
 
     def to_dict(self):
         """returns a dictionary"""
-        aux = {"__class__": type(self).__name__}
-        for key in self.__dict__:
-            if key == "created_at" or key == "updated_at":
-                aux[key] == self.__dict__[key].isoformat()
-            else:
-                aux[key] = self.__dict__[key]
-        return aux
+        self.created_at = self.created_at.isoformat()
+        self.updated_at = self.updated_at.isoformat()
+        self.__dict__["__class__"] = self.__class__.__name__
+        return (self.__dict__)
