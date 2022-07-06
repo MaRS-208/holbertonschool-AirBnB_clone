@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Write a class BaseModel that defines all \
-common attributes/methods for other classes"""
+"""Write a class BaseModel"""
 
 from datetime import datetime
 from models import storage
-from uuid import uuid
+import uuid
 
 
 class BaseModel:
