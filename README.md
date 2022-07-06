@@ -63,10 +63,13 @@ For this purpose, it is needed to understand and integrate these concepts:
 - datetime
 - unittest module
 - args/kwargs
-<<<<<<< HEAD
-=======
+
+### Examples:
+
+- **create:** Creates a new instance of _BaseModel_
+- **show:** Prints the string representation of an instance based on the class name and id.
+- **destroy:** Deletes an instance based on the class name and id
+- **all:** Prints all string representation of all instances based or not on the class name.
 
 
 Project team members: [Manuela Ríos Sosa](https://github.com/MaRS-208), [Ricardo Danta](https://github.com/RicardoDanta)
-
->>>>>>> c923c22df4a5d80b68029f96e5bf79073d2dcdd5
