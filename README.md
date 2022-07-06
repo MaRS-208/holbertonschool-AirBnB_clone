@@ -1,7 +1,5 @@
 # 0x00. AirBnB clone - The console
 
-![alt text](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20220706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220706T132852Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=dde38c6d2a6ae7982440a650ca2462966c5bfb4452a57b06ef8e669157ed094d)
-
 The goal of the AirBnB clone project is to deploy on our server a simple copy of the AirBnB website, where we will be covering all fundamental concepts of the higher level programming track.
 
 At the end of this project we will have a complete web application composed by:
@@ -66,7 +64,7 @@ For this purpose, it is needed to understand and integrate these concepts:
 - unittest module
 - args/kwargs
 
-##Examples:
+### Examples:
 
 - **create:** Creates a new instance of _BaseModel_
 - **show:** Prints the string representation of an instance based on the class name and id.
