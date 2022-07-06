@@ -1,7 +1,4 @@
 # 0x00. AirBnB clone - The console
-Project team members: Manuela Ríos Sosa, Ricardo Danta
-
-<img src=https://imageio.forbes.com/specials-images/imageserve/623e1bf895cf7116c0dfb319/0x0.jpg?format=jpg&width=1200>
 
 The goal of the AirBnB clone project is to deploy on our server a simple copy of the AirBnB website, where we will be covering all fundamental concepts of the higher level programming track.
 
@@ -66,4 +63,7 @@ For this purpose, it is needed to understand and integrate these concepts:
 - datetime
 - unittest module
 - args/kwargs
+
+
+Project team members: [Manuela Ríos Sosa](https://github.com/MaRS-208), [Ricardo Danta](https://github.com/RicardoDanta)
 
