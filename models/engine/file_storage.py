@@ -1,49 +1,46 @@
 #!/usr/bin/python3
-"""convert the dictionary representation to a JSON string"""
+""" Serializes instances to a JSON file and deserializes JSON file
+    to instances """
 
 
 from models.base_model import BaseModel
-from models.amenity import Amenity
-from models.review import Review
-from models.state import State
-from models.place import Place
-from models.city import City
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.state import State
+from models.review import Review
+import os
 import json
 
 
 class FileStorage:
-    """serializes and deserializes an instance to JSON"""
+    """ Class that serializes instances to a JSON file and deserializes
+    JSON file """
     __file_path = 'file.json'
-    __objetcs = {}
+    __objects = {}
 
     def all(self):
-        """returns the dictionary"""
+        """ Returns the dictionary __objects """
         return self.__objects
 
     def new(self, obj):
-        """sets in dictionary"""
-        self.__objects[f"{obj.__class__.name}.{obj.id}"] = obj
+        """ Sets in __objects the obj with key <obj class name>.id """
+        self.__objects[obj.__class__.__name__ + '.' + obj.id] = obj
 
     def save(self):
-        """serializes the JSON file"""
-        new_dict = self.__objects.copy()
-        for key, value in new_dict.items():
-            new_dict[key] = value.to_dict()
-        with open(self.__file.path, w) as f:
-            json.dump(f)
+        """ Serializes __objects to the JSON file """
+        all_dict = {}
+        for key in self.__objects:
+            all_dict[key] = self.__objects[key].to_dict()
+        with open(self.__file_path, 'w') as MyFile:
+            json.dump(all_dict, MyFile)
 
     def reload(self):
-        """Deserialization"""
-        with open(self.__file_path, r) as f:
-            tmp = json.load(f)
-            for key, value in tmp:
-                self.all()
-            aux = {"Amenity": Amenity,
-                   "City": City,
-                   "BaseModel": BaseModel,
-                   "User": User,
-                   "State": State,
-                   "Review": Review,
-                   "Place": Place}
-            self.all()[key] = aux[value.__class__](**value)
+        """ Deserializes the JSON file to __objects """
+        if os.path.exists(self.__file_path):
+            with open(self.__file_path, 'r') as MyFile:
+                my_dict = json.load(MyFile)
+                for key, value in my_dict.items():
+
+                    self.new(eval(value['__class__'])(**value))
