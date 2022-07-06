@@ -3,7 +3,7 @@
 
 from datetime import datetime
 from models import storage
-import uuid
+from uuid import uuid4
 
 
 class BaseModel:
@@ -11,20 +11,20 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """initializing"""
-        is_format = '%Y-%m-%dT%H:%M:%S.%f'
+        formats = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 elif key == "created_at":
-                    self.created_at = datetime.strptime(value, is_format)
+                    self.created_at = datetime.strptime(value, formats)
                 elif key == "updated_at":
-                    self.updated_at = datetime.strptime(value, is_format)
+                    self.updated_at = datetime.strptime(value, formats)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """str"""
