@@ -2,9 +2,9 @@
 """Write a class BaseModel"""
 
 from datetime import datetime
-from models import storage
 import models
 import uuid
+import json
 
 
 class BaseModel():
