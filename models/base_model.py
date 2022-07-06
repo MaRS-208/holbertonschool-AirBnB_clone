@@ -3,8 +3,8 @@
 common attributes/methods for other classes"""
 
 from datetime import datetime
-import storage
-import uuid
+from models import storage
+from uuid import uuid
 
 
 class BaseModel:
