@@ -12,7 +12,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """initializing"""
         is_format = '%Y-%m-%dT%H:%M:%S.%f'
-        if kwargs is not None:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
@@ -33,6 +33,7 @@ class BaseModel:
     def save(self):
         """update the public instance attribute"""
         self.updated_at = datetime.now()
+        self.updated_at = datetime.strptime('%Y-%m-%dT%H:%M:%S.%f')
         storage.save()
 
     def to_dict(self):
