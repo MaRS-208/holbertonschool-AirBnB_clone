@@ -15,7 +15,7 @@ import json
 class FileStorage:
     """serializes and deserializes an instance to JSON"""
     __file_path = 'file.json'
-    __objetcs = {}
+    __objects = {}
 
     def all(self):
         """returns the dictionary"""
@@ -35,15 +35,15 @@ class FileStorage:
 
     def reload(self):
         """Deserialization"""
-        with open(self.__file_path, r) as f:
+        with open(self.__file_path, "r") as f:
             tmp = json.load(f)
-            for key, value in tmp:
+            for key, value in tmp.items():
                 self.all()
-            aux = {"Amenity": Amenity,
-                   "City": City,
-                   "BaseModel": BaseModel,
-                   "User": User,
-                   "State": State,
-                   "Review": Review,
-                   "Place": Place}
-            self.all()[key] = aux[value.__class__](**value)
+                aux = {"Amenity": Amenity,
+                       "City": City,
+                       "BaseModel": BaseModel,
+                       "User": User,
+                       "State": State,
+                       "Review": Review,
+                       "Place": Place}
+                self.all()[key] = aux[value["__class__"]](**value)
