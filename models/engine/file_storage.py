@@ -15,7 +15,7 @@ import json
 class FileStorage:
     """serializes and deserializes an instance to JSON"""
     __file_path = 'file.json'
-    __objetcs = {}
+    __objects = {}
 
     def all(self):
         """returns the dictionary"""
@@ -23,27 +23,31 @@ class FileStorage:
 
     def new(self, obj):
         """sets in dictionary"""
-        self.__objects[f"{obj.__class__.name}.{obj.id}"] = obj
+        self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
         """serializes the JSON file"""
         new_dict = self.__objects.copy()
         for key, value in new_dict.items():
             new_dict[key] = value.to_dict()
-        with open(self.__file.path, w) as f:
-            json.dump(f)
+        with open(self.__file_path, "w") as f:
+            json.dump(new_dict, f)
 
     def reload(self):
         """Deserialization"""
-        with open(self.__file_path, r) as f:
-            tmp = json.load(f)
-            for key, value in tmp:
-                self.all()
-            aux = {"Amenity": Amenity,
-                   "City": City,
-                   "BaseModel": BaseModel,
-                   "User": User,
-                   "State": State,
-                   "Review": Review,
-                   "Place": Place}
-            self.all()[key] = aux[value.__class__](**value)
+        try:
+            tmp = {}
+            with open(self.__file_path, "r") as f:
+                tmp = json.load(f)
+                for key, value in tmp.items():
+                    self.all()
+                    aux = {"Amenity": Amenity,
+                           "City": City,
+                           "BaseModel": BaseModel,
+                           "User": User,
+                           "State": State,
+                           "Review": Review,
+                           "Place": Place}
+                    self.all()[key] = aux[value["__class__"]](**value)
+        except Exception:
+            pass

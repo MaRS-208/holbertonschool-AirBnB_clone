@@ -5,12 +5,7 @@
 from models.base_model import BaseModel
 
 class City(BaseModel):
-<<<<<<< HEAD
-    pass
-    """
-=======
-    """class"""
-    
->>>>>>> 40f4dbea1c1fcaac6d92163fd1fd2f06c54b730d
+    """ def city """
+
     state_id = ""
     name = ""

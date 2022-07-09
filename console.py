@@ -41,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
                "Place": Place}
         obj = aux[arg]()
         obj.save()
-        print(obj)
+        print(obj.id)
 
 
 if __name__ == '__main__':

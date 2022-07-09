@@ -1,5 +1,4 @@
 # 0x00. AirBnB clone - The console
-Project team members: Manuela Ríos Sosa, Ricardo Danta
 
 The goal of the AirBnB clone project is to deploy on our server a simple copy of the AirBnB website, where we will be covering all fundamental concepts of the higher level programming track.
 
@@ -65,3 +64,39 @@ For this purpose, it is needed to understand and integrate these concepts:
 - unittest module
 - args/kwargs
 
+### Examples:
+
+help
+
+```
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  create  help  quit
+
+```
+quit
+
+```
+root@8ee439a1f498:~/holbertonschool-AirBnB_clone# ./console.py
+(hbnb) help quit
+quit to exit
+(hbnb)
+```
+- **create:** Creates a new instance of _BaseModel_
+```
+(hbnb) create BaseModel
+eff29e65-a185-47d1-b90a-93651b44d1a4
+(hbnb) create City
+0f1a25bc-01a3-4091-a19f-744008b99b3d
+(hbnb) create User
+930113f8-d0b4-4906-95ba-6e267cb02f32
+(hbnb)
+```
+- **show:** Prints the string representation of an instance based on the class name and id.
+- **destroy:** Deletes an instance based on the class name and id
+- **all:** Prints all string representation of all instances based or not on the class name.
+
+
+Project team members: [Manuela Ríos Sosa](https://github.com/MaRS-208), [Ricardo Danta](https://github.com/RicardoDanta)
