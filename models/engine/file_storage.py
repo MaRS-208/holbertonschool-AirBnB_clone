@@ -27,8 +27,8 @@ class FileStorage:
 
     def save(self):
         """serializes the JSON file"""
-        new_dict = self.__objects.copy()
-        for key, value in new_dict.items():
+        new_dict = {} 
+        for key, value in self.__objects():
             new_dict[key] = value.to_dict()
         with open(self.__file_path, "w") as f:
             json.dump(new_dict, f)
@@ -49,5 +49,5 @@ class FileStorage:
                            "Review": Review,
                            "Place": Place}
                     self.all()[key] = aux[value["__class__"]](**value)
-        except Exception:
+        except FileNotFoundError:
             pass
