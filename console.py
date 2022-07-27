@@ -32,16 +32,20 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """create"""
-        aux = {"Amenity": Amenity,
-               "City": City,
-               "BaseModel": BaseModel,
-               "User": User,
-               "State": State,
-               "Review": Review,
-               "Place": Place}
-        obj = aux[arg]()
-        obj.save()
-        print(obj.id)
+        try:
+        args = argsplit
+            aux = {"Amenity": Amenity,
+                   "City": City,
+                   "BaseModel": BaseModel,
+                   "User": User,
+                   "State": State,
+                   "Review": Review,
+                   "Place": Place}
+            obj = aux[arg]()
+            obj.save()
+            print(obj.id)
+        except Exception as e:
+        raise e
 
 
 if __name__ == '__main__':
